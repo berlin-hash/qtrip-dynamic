@@ -28,7 +28,6 @@ async function fetchAdventures(city) {
 function addAdventureToDOM(adventures) {
   // TODO: MODULE_ADVENTURES
   // 1. Populate the Adventure Cards and insert those details into the DOM
-  if (adventures == undefined) return;
   adventures.forEach((ele) => {
     // console.log((ele));
     let card = document.createElement("div");
@@ -64,9 +63,7 @@ function addAdventureToDOM(adventures) {
     data.append(card);
   });
 }
-
-//Implementation of filtering by duration which takes in a list of adventures, the lower bound and upper bound of duration and returns a filtered list of adventures.
-function filterByDuration(list, low, high) {
+function filterByDuration(list, low, high){
   // TODO: MODULE_FILTERS
   // 1. Filter adventures based on Duration and return filtered list
   let flist = list.filter((item)=> {
@@ -83,7 +80,7 @@ function filterByCategory(list, categoryList) {
   // console.log(categoryList);
   let flist = [];
   categoryList.forEach((cat) => {
-    let dummylist = list;
+    let dummylist = list
     let xlist = dummylist.filter((item) => {
       return item.category == cat;
     });
@@ -91,9 +88,6 @@ function filterByCategory(list, categoryList) {
   });
   return flist;
 }
-
-// filters object looks like this filters = { duration: "", category: [] };
-
 //Implementation of combined filter function that covers the following cases :
 // 1. Filter by duration only
 // 2. Filter by category only
